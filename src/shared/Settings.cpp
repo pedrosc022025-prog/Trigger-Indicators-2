@@ -216,7 +216,7 @@ namespace Settings {
 $on_mod(Loaded) {
     Settings::updateSettings();
      
-    listenForAllSettingChangesV3([] (std::shared_ptr<geode::SettingV3>){
+    listenForAllSettingChanges([] (std::string_view, std::shared_ptr<geode::SettingV3>){
         Settings::updateSettings();
     });
 }
