@@ -102,7 +102,7 @@ class $modify(EditorUIHook, EditorUI) {
             ? Cache::Utils::DragTriggers::target->m_centerGroupID
             : Cache::Utils::DragTriggers::target->m_targetGroupID;
         if (group == 0) {
-            group = m_editorLayer->getNextFreeGroupID(m_editorLayer->m_objects);
+            group = m_editorLayer->getNextFreeGroupID({});
             if (!Cache::Utils::DragTriggers::isCenter) {
                 auto label = Cache::Utils::DragTriggers::target->getObjectLabel();
                 if (label) label->setString(numToString(group).c_str());
